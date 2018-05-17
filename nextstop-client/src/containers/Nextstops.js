@@ -7,8 +7,9 @@ const Nextstops = (props) => (
         { props.nextstops.map(n => 
             <div className="NextstopCard">
                 <h3>{n.name}</h3>
+                
+                <img className="NextstopImage" src={n.img_url} alt={n.name} />
                 <p>Budget: ${n.budget}</p>
-                <img src={n.img_url} alt={n.name} />
                 <p>Like: {n.like}</p>
                 <p>Dislike: {n.dislike}</p>
             </div>

@@ -5,7 +5,7 @@ const Nextstops = (props) => (
     <div>
         <h1>Nextstops</h1>
         { props.nextstops.map(n => 
-            <div className="NextstopCard">
+            <div key={n.id} className="NextstopCard">
                 <h3>{n.name}</h3>
                 
                 <img className="NextstopImage" src={n.img_url} alt={n.name} />

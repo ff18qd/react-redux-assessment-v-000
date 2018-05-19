@@ -30,24 +30,36 @@ class App extends Component {
     }
     
     componentDidMount() {
-        // fetch("https://18.219.2.46:8080/api/nextstops")
-        //     .then(response => response.json())
-        //     .then(nextstops => this.setState({nextstops}))
-         fetch("https://18.219.2.46:8080/api/nextstops").then((response) => {
-          if (response.ok) {
-              console.log(response)
-            return response.json();
-          } else {
-            throw new Error('Something went wrong');
-          }
-        })
-        .then(
-          // Do something with the response
-          nextstops => this.setState({nextstops})
+        // fetch("https://80887eaf7a0b474e9fa06d513302b5b6.vfs.cloud9.us-east-2.amazonaws.com:8080/api/nextstops")
+        fetch("https://80887eaf7a0b474e9fa06d513302b5b6.vfs.cloud9.us-east-2.amazonaws.com:8080/api/nextstops", {
+            //   headers : { 
+            //     'Content-Type': 'application/json',
+            //     'Accept': 'application/json'
+            //   },
+            //   mode: 'no-cors',
+              credentials: "include"
+            }
         )
-        .catch((error) => {
-          console.log(error)
-        });  
+            .then(response => response.json())
+            .then(nextstops => {
+                console.log(nextstops);
+                this.setState({nextstops})})
+
+        //  fetch("https://18.219.2.46:8080/api/nextstops").then((response) => {
+        //   if (response.ok) {
+        //       console.log(response)
+        //     return response.json();
+        //   } else {
+        //     throw new Error('Something went wrong');
+        //   }
+        // })
+        // .then(
+        //   // Do something with the response
+        //   nextstops => this.setState({nextstops})
+        // )
+        // .catch((error) => {
+        //   console.log(error)
+        // });  
     
     }
     

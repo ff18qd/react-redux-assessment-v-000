@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import Nextstops from './Nextstops';
-import axios from 'axios'
+import axios from 'axios';
 
 const nextstops = [
     {
@@ -54,6 +55,7 @@ class App extends Component {
     
     render() {
         // console.log(this.state)
+        // debugger
         return (
             <div className="App">
                 App container
@@ -62,5 +64,11 @@ class App extends Component {
         )
     }
 }
+
+// const mapStateToProps = (state) => { 
+//   return { nextstops: state.nextstops };
+// };
+ 
+// export default connect(mapStateToProps)(App);
 
 export default App;

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Nextstops.css';
 import NextstopCard from './NextstopCard';
 import NextstopForm from './NextstopForm';
+
+
 class Nextstops extends Component {
     
     render() {
@@ -14,5 +17,10 @@ class Nextstops extends Component {
         )}
 }
 
+const mapStateToProps = (state) => { 
+  return { nextstops: state.nextstops };
+};
+ 
+export default connect(mapStateToProps)(Nextstops);
     
-export default Nextstops;
+// export default Nextstops;

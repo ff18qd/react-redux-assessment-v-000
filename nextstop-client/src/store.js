@@ -17,3 +17,14 @@ const nextstopReducer = (state = [], action) => {
     
 }
 
+const reducers = combineReducers({
+    nextstops: nextstopReducer
+})
+
+const middleware = [thunk];
+
+export default createStore(
+    reducers,
+    applyMiddleware(...middleware),
+    window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
+)

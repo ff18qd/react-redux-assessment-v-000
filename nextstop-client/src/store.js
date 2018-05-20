@@ -5,7 +5,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 
-const nextstopReducer = (state = [], action) => {
+const nextstops = (state = [], action) => {
     switch(action.type) {
         // case "SUCCESSFULLY_ADD ":
         //     return action.nextstops;
@@ -18,7 +18,7 @@ const nextstopReducer = (state = [], action) => {
 }
 
 const reducers = combineReducers({
-    nextstops: nextstopReducer
+    nextstops: nextstops
 })
 
 const middleware = [thunk];

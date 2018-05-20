@@ -6,7 +6,13 @@ import NextstopForm from './NextstopForm';
 
 
 class Nextstops extends Component {
-    
+    componentDidMount() {
+        this.props.dispatch({
+            type:"GET_NEXTSTOPS_SUCCESS",
+            nextstops: [{name:"Yosamite National Park", budget: 800, img_url: "test"}]
+        })
+    }
+        
     render() {
         return (
             <div className="NextstopContainer">

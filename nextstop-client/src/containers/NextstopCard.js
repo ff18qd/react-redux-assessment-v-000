@@ -8,9 +8,9 @@ const NextstopCard = ({nextstop})=> (
         <img className="NextstopImage" src={nextstop.img_url} alt={nextstop.name} />
         <p>Budget: ${nextstop.budget}</p>
         <button>Like</button>
-        <p>Like: {nextstop.like}</p>
+        <p>Likes: {nextstop.like}</p>
         <button>Disike</button>
-        <p>DisLike: {nextstop.dislike}</p>
+        <p>DisLikes: {nextstop.dislike}</p>
     </div>
     );
 

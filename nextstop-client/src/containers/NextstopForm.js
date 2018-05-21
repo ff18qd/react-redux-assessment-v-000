@@ -37,7 +37,7 @@ class NextstopForm extends Component {
         )}
 }
 
-//state.nextstopFormdata is empty so nothing is returned to the props
+
 const mapStateToProps = state => {
     return {
         nextstopFormData: state.nextstopFormData

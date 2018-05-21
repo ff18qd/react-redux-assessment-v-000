@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Nextstops.css';
+import { getNextstops } from '../actions/nextstops';
 import NextstopCard from './NextstopCard';
 import NextstopForm from './NextstopForm';
 
 
 class Nextstops extends Component {
     componentDidMount() {
-        this.props.dispatch({
-            type:"GET_NEXTSTOPS_SUCCESS",
-            nextstops: [{name:"Yosamite National Park", budget: 800, img_url: "test"}]
-        })
+        // this.props.dispatch({
+        //     type:"GET_NEXTSTOPS_SUCCESS",
+        //     nextstops: [{name:"Yosamite National Park", budget: 800, img_url: "https://cdn.unifiedcommerce.com/content/product/large/628136609470.jpg"}]
+        // })
+        this.props.getNextstops();
     }
         
     render() {
@@ -27,6 +29,6 @@ const mapStateToProps = (state) => {
   return { nextstops: state.nextstops };
 };
  
-export default connect(mapStateToProps)(Nextstops);
+export default connect(mapStateToProps, { getNextstops })(Nextstops);
     
 // export default Nextstops;

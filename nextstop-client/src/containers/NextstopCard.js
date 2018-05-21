@@ -7,10 +7,10 @@ const NextstopCard = ({nextstop})=> (
         <h3>{nextstop.name}</h3>
         <img className="NextstopImage" src={nextstop.img_url} alt={nextstop.name} />
         <p>Budget: ${nextstop.budget}</p>
-        <p>Like: {nextstop.like}</p>
         <button>Like</button>
-        <p>DisLike: {nextstop.dislike}</p>
+        <p>Like: {nextstop.like}</p>
         <button>Disike</button>
+        <p>DisLike: {nextstop.dislike}</p>
     </div>
     );
 

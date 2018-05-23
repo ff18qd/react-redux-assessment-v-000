@@ -80,19 +80,19 @@ export const deleteNextstop = (nextstopId) => {
     };
 };
 
-export const likeNextstop = (nextstopId, updateLike) => {
+export const likeNextstop = (nextstopId, likeData) => {
      return dispatch => {
         return fetch(`${API_URL}/nextstops/${nextstopId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({like: updateLike})
+            body: JSON.stringify(likeData) //change the parsing-in data format to {}
         })
         .then(response => response.json())
         .then(nextstop => {
             console.log(nextstop);
-            // return dispatch(likedNextstop(nextstop))
+            return dispatch(likedNextstop(nextstop))
             })
         .catch(error => console.log(error));
     }

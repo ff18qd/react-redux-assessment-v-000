@@ -22,13 +22,19 @@ class Nextstops extends Component {
         const nextstopId=parseInt(event.target.value);
         //find the Nextstop by id and increase like by 1
         var theNextstop = this.props.nextstops.find(n => n.id === nextstopId);
-        var incLike = ++theNextstop.like;
-        incLike = Object.assign({}, theNextstop, {like: incLike})
-        
+        // var incLike = ++theNextstop.like;
+        // incLike = Object.assign({}, theNextstop, {like: incLike})
+        const likeData = {
+            name: theNextstop.name,
+            budget: theNextstop.budget,
+            img_url: theNextstop.img_url,
+            like: ++theNextstop.like,
+            dislike: theNextstop.dislike
+        }
         console.log(nextstopId);
-        console.log(incLike);
+        console.log(likeData);
         
-        // this.props.likeNextstop(nextstopId, updateLike);
+        this.props.likeNextstop(nextstopId, likeData);
     }
     
     componentDidMount() {

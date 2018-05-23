@@ -10,6 +10,7 @@ export default (state = [], action) => {
             return action.nextstopId;
             
         case "LIKE_NEXTSTOP_SUCCESS":
+            debugger
             return action.nextstop;
         
         default:

@@ -4,17 +4,17 @@ import './Nextstops.css';
 // import { deleteNextstop, likeNextstop } from '../actions/nextstops';
 
 
-const NextstopCard = ({index, nextstop, handleOnDelete})=> (
+const NextstopCard = ({index, nextstop, handleOnDelete, handleOnLike})=> (
     <div  className="NextstopCard">
         <h3>{nextstop.name}</h3>
         <img className="NextstopImage" src={nextstop.img_url} alt={nextstop.name} />
         <p>Budget: ${nextstop.budget}</p>
-        <button>Like</button>
+        <button value={nextstop.id} onClick={(e) => handleOnLike(e)}>Like</button>
         <p>Likes: {nextstop.like}</p>
         <button>Disike</button>
         <p>DisLikes: {nextstop.dislike}</p>
         <div>
-            <button type="button" value={index} onClick={(e) => handleOnDelete(e)}>Delete</button>
+            <button type="button" value={nextstop.id} onClick={(e) => handleOnDelete(e)}>Delete</button>
         </div>
     </div>
     );

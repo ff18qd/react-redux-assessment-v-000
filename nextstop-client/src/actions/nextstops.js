@@ -1,4 +1,5 @@
 import { resetNextstopForm } from "./nextstopForm";
+import fetch from 'isomorphic-fetch';
 
 // const API_URL = process.env.REACT_APP_API_URL;
 // private IP 172.31.35.66
@@ -68,6 +69,10 @@ export const deleteNextstop = (nextstopId) => {
     return dispatch => {
         return fetch(`${API_URL}/nextstops/${nextstopId}`, {
             method: "DELETE",
+            headers: {
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            }
         })
         .then(response => response.json()) //get Unexpected Json syntax error
         .then(nextstopId => dispatch(deletedNextstop(nextstopId)))

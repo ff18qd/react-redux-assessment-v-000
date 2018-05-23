@@ -28,6 +28,7 @@ const deletedNextstop = nextstopId => {
 };
 
 const likedNextstop = nextstop => {
+    // debugger
     return {
         type: "LIKE_NEXTSTOP_SUCCESS",
         nextstop

@@ -10,6 +10,9 @@ const NextstopCard = ({nextstop})=> (
         <p>Likes: {nextstop.like}</p>
         <button>Disike</button>
         <p>DisLikes: {nextstop.dislike}</p>
+        <div>
+            <button type="button" value="delete">Delete</button>
+        </div>
     </div>
     );
 

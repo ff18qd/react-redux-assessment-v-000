@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Nextstops.css';
 import { getNextstops } from '../actions/nextstops';
-//import NextstopCard from './NextstopCard';//need to change path
-import NextstopCard from '../components/NextstopCard';
+import NextstopCard from './NextstopCard';//need to change path
+// import NextstopCard from '../components/NextstopCard';
 import NextstopForm from './NextstopForm';
 
 

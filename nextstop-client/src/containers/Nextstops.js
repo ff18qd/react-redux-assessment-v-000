@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Nextstops.css';
 import { getNextstops, deleteNextstop, likeNextstop, dislikeNextstop } from '../actions/nextstops';
-import NextstopCard from './NextstopCard';//need to change path
-// import NextstopCard from '../components/NextstopCard';
+// import NextstopCard from './NextstopCard';//need to change path
+import NextstopCard from '../components/NextstopCard';
 import NextstopForm from './NextstopForm';
 
 
@@ -30,7 +30,7 @@ class Nextstops extends Component {
             img_url: theNextstop.img_url,
             like: ++theNextstop.like,
             dislike: theNextstop.dislike
-        }
+        };
         console.log(nextstopId);
         console.log(likeData);
         
@@ -51,7 +51,7 @@ class Nextstops extends Component {
             img_url: theNextstop.img_url,
             like: theNextstop.like,
             dislike: ++theNextstop.dislike
-        }
+        };
         // console.log(nextstopId);
         console.log(dislikeData);
         this.props.dislikeNextstop(nextstopId, dislikeData);
@@ -68,9 +68,7 @@ class Nextstops extends Component {
                 <h1>Nextstops</h1>
                 { this.props.nextstops.map((nextstop,i) => {
                     return <NextstopCard key={i} index={i} nextstop={nextstop} handleOnDelete={this.handleOnDelete} handleOnLike={this.handleOnLike} handleOnDislike={this.handleOnDislike}/>
-                    
                     })
-                    
                 }
                 <NextstopForm />
             </div>

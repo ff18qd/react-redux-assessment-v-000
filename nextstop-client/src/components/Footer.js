@@ -25,7 +25,6 @@ const Footer = () => (
         <div style={style}>
             Happy Coding!
         </div>
-        
     </div>
 )
 

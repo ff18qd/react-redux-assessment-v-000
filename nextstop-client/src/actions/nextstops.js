@@ -2,7 +2,7 @@ import { resetNextstopForm } from "./nextstopForm";
 
 // const API_URL = process.env.REACT_APP_API_URL;
 // private IP 172.31.35.66
-const API_URL = "http://ec2-18-191-80-244.us-east-2.compute.amazonaws.com:8081/api";
+const API_URL = "http://ec2-52-14-153-64.us-east-2.compute.amazonaws.com:8081/api";
 
 // action creator
 const setNextstops = nextstops => {

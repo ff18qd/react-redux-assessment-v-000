@@ -8,6 +8,9 @@ export default (state = [], action) => {
             
         case "DELETE_NEXTSTOP_SUCCESS":
             return action.nextstopId;
+            
+        case "LIKE_NEXTSTOP_SUCCESS":
+            return action.nextstop;
         
         default:
             return state;

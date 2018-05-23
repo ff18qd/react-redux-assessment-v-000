@@ -26,6 +26,13 @@ const deletedNextstop = nextstopId => {
     };
 };
 
+const likedNextstop = nextstop => {
+    return {
+        type: "LIKE_NEXTSTOP_SUCCESS",
+        nextstop
+    };
+};
+
 
 //async actions
 export const getNextstops = () => {
@@ -61,21 +68,30 @@ export const deleteNextstop = (nextstopId) => {
     return dispatch => {
         return fetch(`${API_URL}/nextstops/${nextstopId}`, {
             method: "DELETE",
+        })
+        .then(response => response.json()) //get Unexpected Json syntax error
+        .then(nextstopId => dispatch(deletedNextstop(nextstopId)))
+        .catch(error => console.log(error));
+    };
+};
+
+export const likeNextstop = (nextstopId, updateLike) => {
+     return dispatch => {
+        return fetch(`${API_URL}/nextstops/${nextstopId}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
-            // body: JSON.stringify({nextstop: nextstop})
+            body: JSON.stringify({like: updateLike})
         })
         .then(response => response.json())
-        .then(nextstopId => {
-            dispatch(deletedNextstop(nextstopId))
+        .then(nextstop => {
+            console.log(nextstop);
+            // return dispatch(likedNextstop(nextstop))
             })
         .catch(error => console.log(error));
     }
-    
 }
-
-
 
         
         // let nextstops = [{name:"Yosamite National Park", budget: 800, img_url: "https://cdn.unifiedcommerce.com/content/product/large/628136609470.jpg", like: 0, dislike: 0}]

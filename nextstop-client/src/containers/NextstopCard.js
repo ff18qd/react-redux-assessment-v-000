@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Nextstops.css';
 import { connect } from 'react-redux';
-import { deleteNextstop } from '../actions/nextstops';
+import { deleteNextstop, likeNextstop } from '../actions/nextstops';
 
 
 // const NextstopCard = ({nextstop})=> (
@@ -29,15 +29,24 @@ class NextstopCard extends Component {
         this.props.deleteNextstop(nextstopId)
     }
     
+    handleOnLike = (event) => {
+        event.preventDefault();
+        const nextstopId=event.target.value;
+        const updateLike = ++this.props.nextstop.like;
+        console.log(updateLike);
+        this.props.likeNextstop(nextstopId, updateLike);
+    }
+    
+    
     render() {
         return (
             <div key={this.props.nextstop.id} className="NextstopCard">
                 <h3>{this.props.nextstop.name}</h3>
                 <img className="NextstopImage" src={this.props.nextstop.img_url} alt={this.props.nextstop.name} />
                 <p>Budget: ${this.props.nextstop.budget}</p>
-                <button>Like</button>
+                <button id='like' value={this.props.nextstop.like} onClick={this.handleOnLike}>Like</button>
                 <p>Likes: {this.props.nextstop.like}</p>
-                <button>Disike</button>
+                <button id='dislike' value={this.props.nextstop.dislike}>Disike</button>
                 <p>DisLikes: {this.props.nextstop.dislike}</p>
                 <div>
                     <button type="button" value={this.props.nextstop.id} onClick={this.handleOnDelete}>Delete</button>
@@ -47,5 +56,5 @@ class NextstopCard extends Component {
 }
 
 
-export default connect(null, { deleteNextstop })(NextstopCard);
+export default connect(null, { deleteNextstop, likeNextstop })(NextstopCard);
 // export default NextstopCard;

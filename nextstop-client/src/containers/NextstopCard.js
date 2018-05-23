@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Nextstops.css';
+import { connect } from 'react-redux';
+import { deleteNextstop } from '../actions/nextstops';
 
 
 // const NextstopCard = ({nextstop})=> (
@@ -20,7 +22,12 @@ import './Nextstops.css';
 
 
 class NextstopCard extends Component {
-    
+    handleOnDelete = (event) => {
+        event.preventDefault();
+        const nextstopId=event.target.value;
+        console.log(nextstopId);
+        this.props.deleteNextstop(nextstopId)
+    }
     
     render() {
         return (
@@ -33,12 +40,12 @@ class NextstopCard extends Component {
                 <button>Disike</button>
                 <p>DisLikes: {this.props.nextstop.dislike}</p>
                 <div>
-                    <button type="button" value="delete" onClick={this.deleteCard}>Delete</button>
+                    <button type="button" value={this.props.nextstop.id} onClick={this.handleOnDelete}>Delete</button>
                 </div>
             </div>
         )}
 }
 
 
-
-export default NextstopCard;
+export default connect(null, { deleteNextstop })(NextstopCard);
+// export default NextstopCard;

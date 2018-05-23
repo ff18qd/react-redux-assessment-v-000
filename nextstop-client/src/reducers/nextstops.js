@@ -5,6 +5,9 @@ export default (state = [], action) => {
             
         case "CREATE_NEXTSTOP_SUCCESS":
             return state.concat(action.nextstop);
+            
+        case "DELETE_NEXTSTOP_SUCCESS":
+            return action.nextstopId;
         
         default:
             return state;

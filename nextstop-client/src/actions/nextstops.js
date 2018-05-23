@@ -19,6 +19,14 @@ const addNextstop = nextstop => {
     };
 };
 
+const deletedNextstop = nextstopId => {
+    return {
+        type: "DELETE_NEXTSTOP_SUCCESS",
+        nextstopId
+    };
+};
+
+
 //async actions
 export const getNextstops = () => {
    return dispatch => {
@@ -49,7 +57,23 @@ export const createNextstop = (nextstop) => {
     }
 }
 
-
+export const deleteNextstop = (nextstopId) => {
+    return dispatch => {
+        return fetch(`${API_URL}/nextstops/${nextstopId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            // body: JSON.stringify({nextstop: nextstop})
+        })
+        .then(response => response.json())
+        .then(nextstopId => {
+            dispatch(deletedNextstop(nextstopId))
+            })
+        .catch(error => console.log(error));
+    }
+    
+}
 
 
 

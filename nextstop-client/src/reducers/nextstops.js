@@ -10,11 +10,14 @@ export default (state = [], action) => {
             return action.nextstopId;
             
         case "LIKE_NEXTSTOP_SUCCESS":
-            const id = action.nextstop.id;
-            const index = state.findIndex(n => n.id === id);
-            console.log(index);
+            let id = action.nextstop.id;
+            let index = state.findIndex(n => n.id === id);
             return [...state.slice(0, index), action.nextstop, ...state.slice(index + 1)];
            
+        case "DISLIKE_NEXTSTOP_SUCCESS":
+            id = action.nextstop.id;
+            index = state.findIndex(n => n.id === id);
+            return [...state.slice(0, index), action.nextstop, ...state.slice(index + 1)];
         
         default:
             return state;

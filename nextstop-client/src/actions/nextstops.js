@@ -35,6 +35,13 @@ const likedNextstop = nextstop => {
     };
 };
 
+const dislikedNextstop = nextstop => {
+    // debugger
+     return {
+        type: "DISLIKE_NEXTSTOP_SUCCESS",
+        nextstop
+    };
+};
 
 //async actions
 export const getNextstops = () => {
@@ -99,7 +106,23 @@ export const likeNextstop = (nextstopId, likeData) => {
     }
 }
 
-        
+export const dislikeNextstop = (nextstopId, dislikeData) => {
+    return dispatch => {
+        return fetch(`${API_URL}/nextstops/${nextstopId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dislikeData) //change the parsing-in data format to {}
+        })
+        .then(response => response.json())
+        .then(nextstop => {
+            console.log(nextstop);
+            return dispatch(dislikedNextstop(nextstop))
+            })
+        .catch(error => console.log(error));
+    }
+}        
         // let nextstops = [{name:"Yosamite National Park", budget: 800, img_url: "https://cdn.unifiedcommerce.com/content/product/large/628136609470.jpg", like: 0, dislike: 0}]
         // this.setState({nextstops})})
         

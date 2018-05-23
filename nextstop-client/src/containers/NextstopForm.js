@@ -56,7 +56,6 @@ class NextstopForm extends Component {
                 </form>
                 
             </div>
-            
 
         )}
 }

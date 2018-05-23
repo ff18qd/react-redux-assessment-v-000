@@ -6,3 +6,9 @@ export const updateNextstopFormData = nextstopFormData => {
         nextstopFormData
     };
 };
+
+export const resetNextstopForm = () => {
+    return {
+        type: "RESET_NEXTSTOP_FORM"
+    };
+};

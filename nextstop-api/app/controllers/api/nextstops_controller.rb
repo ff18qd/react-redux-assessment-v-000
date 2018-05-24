@@ -29,7 +29,8 @@ class Api::NextstopsController < ApplicationController
     
     def destroy
         if @nextstop.destroy
-            render status: 204
+            # render status: 204
+            render json: @nextstop.id
         else 
             render json: {message: "Unable to remove nextstop"}, status: 400
         end 

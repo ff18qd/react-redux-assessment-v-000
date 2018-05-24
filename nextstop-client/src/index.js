@@ -5,10 +5,9 @@ import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import Home from './components/Home';
-import ContactUs from './components/ContactUs';
 
 const link = {
   width: '100px',
@@ -47,14 +46,19 @@ ReactDOM.render(
     <Router>
     <div>
         <Navbar />
-        <Route path="/" component={Home} />
-        <Route exact path="/contactus" component={ContactUs} />
         <Provider store={store}>
-            <App store={store}/>
+          <App store={store}/>
         </Provider>
+        <Footer />
      </div>
      </Router>, 
     document.getElementById('root')
 );
 
 registerServiceWorker();
+
+
+          // <Switch>
+          //   <Route exact path="/" component={Home} />
+          //   <Route exact path="/contactus" component={ContactUs} />
+          // </Switch>

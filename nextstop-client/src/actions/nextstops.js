@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 
 // const API_URL = process.env.REACT_APP_API_URL;
 // private IP 172.31.35.66
-const API_URL = "http://ec2-52-14-153-64.us-east-2.compute.amazonaws.com:8081/api";
+const API_URL = "http://ec2-18-218-20-41.us-east-2.compute.amazonaws.com:8081/api";
 
 // action creator
 const setNextstops = nextstops => {
@@ -83,6 +83,7 @@ export const deleteNextstop = (nextstopId) => {
             }
         })
         .then(response => response.json()) //get Unexpected Json syntax error
+        // .then(response => response.ok)
         .then(nextstopId => dispatch(deletedNextstop(nextstopId)))
         .catch(error => console.log(error));
     };

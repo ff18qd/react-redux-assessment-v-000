@@ -12,9 +12,8 @@ import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 const link = {
   width: '100px',
   padding: '12px',
-  margin: '0 6px 6px',
-  background: 'blue',
-  // background: '#2F558E',
+  margin: '0px 6px 6px',
+  background: '#2F558E',
   textDecoration: 'none',
   color: 'white',
 }
@@ -29,7 +28,7 @@ const Navbar = () =>
       style={link}
       /* add prop for activeStyle */
       activeStyle={{
-        background: 'darkblue'
+        background: '#2F55ff'
       }}
     >Home</NavLink>
     <NavLink
@@ -37,7 +36,7 @@ const Navbar = () =>
       exact
       style={link}
       activeStyle={{
-        background: 'darkblue'
+        background: '#2F55ff'
       }}
     >About</NavLink>
     <NavLink
@@ -45,7 +44,7 @@ const Navbar = () =>
       exact
       style={link}
       activeStyle={{
-        background: 'darkblue'
+        background: '#2F55ff'
       }}
     >ContactUs</NavLink>
   </div>;

@@ -4,9 +4,10 @@ form {
 	background: whitesmoke;
 	padding: 2em 4em 1em;
 	max-width: 350px;
-	margin: 100px auto auto;
+	margin: 15px auto auto;
 	box-shadow: 0 0 1em #222;
 	border-radius: 5px;
+	margin-left: 10px;
 }
 
 form:hover {

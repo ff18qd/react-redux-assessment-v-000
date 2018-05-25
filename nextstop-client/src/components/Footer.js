@@ -10,12 +10,13 @@ var style = {
     bottom: "0",
     height: "20px",
     width: "100%",
+    opacity: 0.8
 }
 
 var phantom = {
   display: 'block',
   padding: '10px',
-  height: '20px',
+  height: '18px',
   width: '100%',
 }
 
@@ -23,7 +24,7 @@ const Footer = () => (
     <div id="footer">
         <div style={phantom} />
         <div style={style}>
-            Happy Coding!
+            Happy <i class="material-icons" style={{color: 'red'}}>favorite</i> Coding!
         </div>
     </div>
 )

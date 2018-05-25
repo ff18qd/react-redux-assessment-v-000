@@ -24,11 +24,17 @@ class NextstopForm extends Component {
         
         return (
             <div>
-            <h3>Add a New Destination</h3>
+            
                 <form onSubmit={this.handleOnSubmit}>
+                    
                     <div>
-                        <label htmlFor="name">Name:</label>
-                        <input
+                        <h3>Add a New Destination</h3>
+                    </div>
+                    <div>
+                        <label className="col-25" htmlFor="name">Name:</label>
+                    </div>
+                    <div>
+                        <input className="col-75"
                             type="text"
                             name="name"
                             onChange={this.handleOnChange}
@@ -36,8 +42,10 @@ class NextstopForm extends Component {
                         />
                     </div>
                     <div>
-                        <label htmlFor="budget">Budget:</label>
-                        <input
+                        <label className="col-25" htmlFor="budget">Budget:</label>
+                    </div>
+                    <div>
+                        <input className="col-75"
                             type="text"
                             name="budget"
                             onChange={this.handleOnChange}
@@ -45,15 +53,17 @@ class NextstopForm extends Component {
                         />
                     </div>
                     <div>
-                        <label htmlFor="img_url">Image URL:</label>
-                        <input
+                        <label className="col-25" htmlFor="img_url">Image URL:</label>
+                        </div>
+                    <div>
+                        <input className="col-75"
                             type="text"
                             name="img_url"
                             onChange={this.handleOnChange}
                             value={ img_url }
                         />
                     </div>
-                    <button type="submit">Add Your Nextstop</button>
+                    <button type="submit">Submit</button>
                 </form>
                 
             </div>

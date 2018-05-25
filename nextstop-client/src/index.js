@@ -6,7 +6,7 @@ import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 
 const link = {
@@ -14,6 +14,7 @@ const link = {
   padding: '12px',
   margin: '0 6px 6px',
   background: 'blue',
+  // background: '#2F558E',
   textDecoration: 'none',
   color: 'white',
 }

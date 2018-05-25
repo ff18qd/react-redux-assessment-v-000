@@ -1,1 +1,48 @@
 /*https://codepen.io/john129er/pen/LGVVmY*/
+form {
+    float: left;
+	background: whitesmoke;
+	padding: 2em 4em 1em;
+	max-width: 350px;
+	margin: 100px auto auto;
+	box-shadow: 0 0 1em #222;
+	border-radius: 5px;
+}
+
+form:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+}
+
+/*input {*/
+/*    width: 100%;*/
+/*}*/
+
+button[type="submit"] {
+	background: #2F558E;
+	box-shadow: 0 3px 0 0 #1D3C6A;
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 1em;
+	line-height: 1.2em;
+	/*margin: 2em 0 0;*/
+	margin-left: auto;
+    margin-right: auto;
+	outline: none;
+	padding: .8em 1em;
+	text-shadow: 0 1px #68B25B;
+}

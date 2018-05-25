@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { updateNextstopFormData } from '../actions/nextstopForm';
 import { createNextstop } from '../actions/nextstops';
+import './NextstopForm.css';
 
 class NextstopForm extends Component {
     handleOnChange = event => {

@@ -24,7 +24,7 @@ const Footer = () => (
     <div id="footer">
         <div style={phantom} />
         <div style={style}>
-            Happy <i class="material-icons" style={{color: 'red'}}>favorite</i> Coding!
+            Happy <i class="fa fa-heart" style={{color: 'red'}}></i> Coding!
         </div>
     </div>
 )

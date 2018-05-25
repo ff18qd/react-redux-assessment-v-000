@@ -32,6 +32,14 @@ const Navbar = () =>
       }}
     >Home</NavLink>
     <NavLink
+      to="/about"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >About</NavLink>
+    <NavLink
       to="/contactus"
       exact
       style={link}
@@ -57,8 +65,3 @@ ReactDOM.render(
 
 registerServiceWorker();
 
-
-          // <Switch>
-          //   <Route exact path="/" component={Home} />
-          //   <Route exact path="/contactus" component={ContactUs} />
-          // </Switch>

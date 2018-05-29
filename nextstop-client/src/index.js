@@ -40,6 +40,14 @@ const Navbar = () =>
       }}
     >About</NavLink>
     <NavLink
+      to="/nextstops"
+      exact
+      style={link}
+      activeStyle={{
+        background: '#2F55ff'
+      }}
+    >Nextstops List</NavLink>
+    <NavLink
       to="/contactus"
       exact
       style={link}

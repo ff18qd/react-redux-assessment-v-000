@@ -20,15 +20,17 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NextstopsList from '../components/NextstopsList';
-import NextstopCard from '../components/NextstopCard';
+import NextstopShow from './NextstopShow';
  
 const NextstopsPage = ({ match, nextstops }) => 
   <div>
     <NextstopsList nextstops={nextstops} />
-    <Route path={`${match.url}/:nextstopId`} component={NextstopCard}/>
+    
+    <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
     <Route exact path={match.url} render={() => (
-      <h3>Please select a Movie from the list.</h3>
+      <h3>Please select a Nextstop from the list.</h3>
     )}/>
+    
   </div>;
  
 const mapStateToProps = (state) => {

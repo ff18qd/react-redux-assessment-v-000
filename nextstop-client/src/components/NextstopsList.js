@@ -2,9 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
  
 const NextstopsList = ({ nextstops }) => {
-  debugger
   const renderNextstops = nextstops.map(nextstop => 
-    <Link key={nextstop.id} to={`/nextstops/${nextstop.id}`}>{nextstop.name}</Link>
+     <Link key={nextstop.id} to={`/nextstops/${nextstop.id}`}>{nextstop.name}</Link>
   );
  
   return (

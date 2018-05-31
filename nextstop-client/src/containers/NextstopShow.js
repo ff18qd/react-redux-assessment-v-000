@@ -21,7 +21,6 @@
 import React from 'react';
  
 const NextstopShow = props => {
- 
   return (
     <div>
       <h3>Show Component!</h3>

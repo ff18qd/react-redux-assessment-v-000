@@ -23,15 +23,16 @@ import NextstopsList from '../components/NextstopsList';
 import NextstopShow from './NextstopShow';
  
 const NextstopsPage = ({ match, nextstops }) => 
+
   <div>
     <NextstopsList nextstops={nextstops} />
-    
     <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
     <Route exact path={match.url} render={() => (
       <h3>Please select a Nextstop from the list.</h3>
     )}/>
     
   </div>;
+
  
 const mapStateToProps = (state) => {
   return {

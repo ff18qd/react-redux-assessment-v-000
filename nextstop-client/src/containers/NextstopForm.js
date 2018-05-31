@@ -54,7 +54,7 @@ class NextstopForm extends Component {
                     </div>
                     <div>
                         <label className="col-25" htmlFor="img_url">Image URL:</label>
-                        </div>
+                    </div>
                     <div>
                         <input className="col-75"
                             type="text"

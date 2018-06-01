@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import './Nextstops.css';
 import { getNextstops, deleteNextstop, likeNextstop, dislikeNextstop } from '../actions/nextstops';
-// import NextstopCard from './NextstopCard';//need to change path
 import NextstopCard from '../components/NextstopCard';
 import NextstopForm from './NextstopForm';
+import NextstopShow from './NextstopShow';
 
 
 class Nextstops extends Component {
@@ -63,6 +64,7 @@ class Nextstops extends Component {
     }
         
     render() {
+        const { match } = this.props
         return (
             <div className="NextstopContainer">
                 <h1>Nextstops</h1>
@@ -71,6 +73,7 @@ class Nextstops extends Component {
                     })
                 }
                 <NextstopForm />
+                <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
             </div>
         )}
 }

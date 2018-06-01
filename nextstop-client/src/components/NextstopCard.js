@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const NextstopCard = ({index, nextstop, handleOnDelete, handleOnLike, handleOnDislike})=> (
     <div  className="NextstopCard">
-        <h3>{nextstop.name}</h3>
+        
+        <h3><Link key={nextstop.id} to={`/nextstops/${nextstop.id}`}>{nextstop.name}</Link></h3>
         <img className="NextstopImage" src={nextstop.img_url} alt={nextstop.name} />
         <p>Budget: ${nextstop.budget}</p>
         <div>
@@ -19,3 +21,5 @@ const NextstopCard = ({index, nextstop, handleOnDelete, handleOnLike, handleOnDi
     );
 
 export default NextstopCard;
+
+// <h3>{nextstop.name}</h3>

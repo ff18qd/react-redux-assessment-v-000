@@ -14,3 +14,4 @@ const NextstopsList = ({ nextstops }) => {
 };
  
 export default NextstopsList;
+

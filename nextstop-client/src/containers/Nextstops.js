@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './Nextstops.css';
 import { getNextstops, deleteNextstop, likeNextstop, dislikeNextstop } from '../actions/nextstops';
 import NextstopCard from '../components/NextstopCard';
@@ -87,3 +87,4 @@ const mapStateToProps = (state) => {
  
 export default connect(mapStateToProps, { getNextstops, deleteNextstop, likeNextstop, dislikeNextstop })(Nextstops);
     
+//  <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>

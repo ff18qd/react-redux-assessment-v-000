@@ -4,7 +4,6 @@ import Nextstops from '../containers/Nextstops';
 import { Route, Switch } from 'react-router-dom';
 import About from './About';
 import ContactUs from './ContactUs';
-import NextstopShow from '../containers/NextstopShow';
 
 
 const App = () => 

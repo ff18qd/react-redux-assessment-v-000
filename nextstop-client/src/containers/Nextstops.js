@@ -65,6 +65,7 @@ class Nextstops extends Component {
         
     render() {
         const { match } = this.props;
+        //  debugger
         return (
             <div className="NextstopContainer">
                 <h1>Nextstops</h1>
@@ -73,7 +74,7 @@ class Nextstops extends Component {
                     })
                 }
                 <NextstopForm />
-               {this.props.children}
+              
                 <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
                 
             </div>

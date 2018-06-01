@@ -74,8 +74,6 @@ class Nextstops extends Component {
                     })
                 }
                 <NextstopForm />
-              
-                <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
                 
             </div>
         )}

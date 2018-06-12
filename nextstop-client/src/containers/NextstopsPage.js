@@ -17,35 +17,23 @@
 // export default connect(mapStateToProps)(NextstopsPage);
 
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NextstopsList from '../components/NextstopsList';
-import NextstopShow from './NextstopShow';
+
  
 // const NextstopsPage = ({ match, nextstops }) => 
 class NextstopsPage extends Component {
   
   render() {
     const {match, nextstops} = this.props
-    // const childrenShowDiv = React.Children.map(this.props.children, child => {
-    //   return (
-    //     <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
-    //   );
-    // });
     
     return (
       <div>
         <NextstopsList nextstops={nextstops} />
-        <Switch>
-          <Route path={`${match.url}/:nextstopId`} component={NextstopShow}/>
-          <Route exact path={match.url} render={() => (
-            <h3>Please select a Nextstop from the list.</h3>
-          )}/>
-        </Switch>
+        <Route exact path={match.url} render={() => <h3>Please select a Nextstop from the list.</h3>}/>
       </div>
-      
-    )
-  }
+    )}
 }
  
 const mapStateToProps = (state) => {
@@ -55,5 +43,3 @@ const mapStateToProps = (state) => {
 }
  
 export default connect(mapStateToProps)(NextstopsPage);
-
-// 

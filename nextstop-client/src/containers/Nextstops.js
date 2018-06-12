@@ -19,7 +19,7 @@ class Nextstops extends Component {
     handleOnLike = (event) => {
         event.preventDefault();
         // get id of the Nextstop being clicked
-        const nextstopId=parseInt(event.target.value);
+        const nextstopId = parseInt(event.target.value);
         //find the Nextstop by id and increase like by 1
         var theNextstop = this.props.nextstops.find(n => n.id === nextstopId);
         // var incLike = ++theNextstop.like;

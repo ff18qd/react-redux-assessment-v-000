@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+const API_URL = "http://ec2-18-218-177-216.us-east-2.compute.amazonaws.com:8081/api";
  
 class NextstopShow extends Component {
    constructor(props) {
@@ -11,10 +13,11 @@ class NextstopShow extends Component {
   }
   handleCommentSubmit = (e) => {
     e.preventDefault();
-    const addComment=this.state.comment;
-    console.log(addComment);
+    //const addComment=this.state.comment;
+    const newComment = Object.assign({}, {content: this.state.comment, likes: Math.floor(Math.random() * 100)})
+    // console.log(addComment);
     this.setState({ 
-      comments: [...this.state.comments, addComment],
+      comments: [...this.state.comments, newComment],
       comment: ''
     })
     // this.setState({
@@ -28,12 +31,34 @@ class NextstopShow extends Component {
           comment: e.target.value
     });
   }
+
   
   renderComments() {
-     return this.state.comments.map((c,index) => 
-        <p key={index}>{c}</p>
+
+    return this.state.comments.sort((a, b) => b.likes - a.likes).map((c,index) => 
+        <p key={index}>{c.content} - {c.likes} likes</p>
       
      );
+  }
+  
+  callApi = () => {
+      console.log('a')
+        // fetch("http://ec2-18-218-171-133.us-east-2.compute.amazonaws.com:8081/api/nextstops")
+        fetch(`${API_URL}/nextstops`)
+        .then(response => {
+          console.log('b')
+          return response.json()
+          
+        })
+        .then(nextstops => console.log('c',nextstops))
+        .catch(error => console.log('d', error));
+        console.log('e')
+        
+        
+        // a b c+stops e
+        
+        // a e b c+stops
+   
   }
   
   render() {
@@ -49,6 +74,7 @@ class NextstopShow extends Component {
           
          
         </div>
+        <button onClick={this.callApi}>Call Api</button>
         <form onSubmit={this.handleCommentSubmit}>
           <label>Comment</label>
           <textarea 

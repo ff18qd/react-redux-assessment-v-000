@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./NextstopsList.css";
  
 const NextstopsList = ({ nextstops }) => {
   const renderNextstops = nextstops.map(nextstop => 
-     <Link key={nextstop.id} to={`/nextstops/${nextstop.id}`}>{nextstop.name}</Link>
+     <Link className="btn" key={nextstop.id} to={`/nextstops/${nextstop.id}`}>{nextstop.name}</Link>
   );
  
   return (

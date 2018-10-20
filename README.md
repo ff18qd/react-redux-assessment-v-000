@@ -106,7 +106,7 @@ Your final project review is a comprehensive review that can cover all the topic
 - Open browser and go to ec2-13-59-109-200.us-east-2.compute.amazonaws.com:8080 to check frontend
 
 ### Check it out on Heroku
-- [nextstop()]
+- [nextstop](https://agile-brushlands-22848.herokuapp.com/)
 
 
 #### I will add a how to for Heroku once I finish the deployment

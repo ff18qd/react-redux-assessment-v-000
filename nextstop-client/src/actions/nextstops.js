@@ -3,8 +3,9 @@ import fetch from 'isomorphic-fetch';
 
 // const API_URL = process.env.REACT_APP_API_URL;
 // private IP 172.31.35.66
-const API_URL = "http://ec2-18-224-200-254.us-east-2.compute.amazonaws.com:8081/api";
+// const API_URL = "https://ec2-18-224-200-254.us-east-2.compute.amazonaws.com:8081/api";
 
+const API_URL = "https://localhost:3001/api";
 
 // action creator
 const setNextstops = nextstops => {

@@ -50,7 +50,10 @@ export const getNextstops = () => {
    return dispatch => {
         // fetch("http://ec2-18-218-171-133.us-east-2.compute.amazonaws.com:8081/api/nextstops")
         fetch(`${API_URL}/nextstops`)
-        .then(response => response.json())
+        // .then(response => response.json())
+        .then(response => {
+           return response.json()
+         })
         .then(nextstops => {
         return dispatch(setNextstops(nextstops))})
         .catch(error => console.log(error));

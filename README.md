@@ -97,13 +97,17 @@ Your final project review is a comprehensive review that can cover all the topic
 - cd to your folder which contains this repo
 - cd nextstop-api
 - Run bundle install to install rails gems
-- Run command sudo service postgresql start to start the Postgres server
-- Run rails s -b ip -p 8081 (here ip is my cloud9 instance private DNS)
+- Run command `sudo service postgresql start` to start the Postgres server
+- Run `rails s -b ip -p 8081` (here ip is my cloud9 instance private DNS)
 - Open another terminal and cd nextstop-client
 - Run npm install to run all the dependencies for react 
-- Run npm start
+- Run `npm start`
 - Open browser and go to ec2-13-59-109-200.us-east-2.compute.amazonaws.com:8081/api/nextstops to check API backend data
 - Open browser and go to ec2-13-59-109-200.us-east-2.compute.amazonaws.com:8080 to check frontend
+
+### Check it out on Heroku
+- [nextstop()]
+
 
 #### I will add a how to for Heroku once I finish the deployment
 
